@@ -10,9 +10,9 @@ namespace WishList.Controllers
         private readonly ApplicationDbContext _context;
         public IActionResult Index()
         {
-            List<Item> items = new List<Item>();
-            items.AddRange(_context.Items);
-            return View("Index",items );
+            List<Item> model = new List<Item>();
+            model.AddRange(_context.Items);
+            return View("Index",model );
         }
         public ItemController(ApplicationDbContext context)
         {
